@@ -1,0 +1,28 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body style="background-color: #bdefef;">
+
+<header>
+    <th:block th:include="~{fragments/nav}"></th:block>
+</header>
+
+<main class="p-5 align-content-center bg-blur">
+
+
+    <i class="far fa-smile"></i><h2 class="text-center text-primary"><i class="far fa-smile"></i>Sorry Something went wrong!</h2><p>&#128522;</p>
+    <p th:text="${message}"></p>
+
+
+</main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+
+</body>
+</html>
