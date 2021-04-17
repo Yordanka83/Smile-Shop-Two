@@ -1,0 +1,39 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body style="background-color: #bdefef;">
+
+<header>
+    <th:block th:include="~{fragments/nav}"></th:block>
+</header>
+
+<div class="container-fluid">
+    <main class="mt-3" >
+        <h1 class="text-center text-info">Category edit</h1>
+        <h2></h2>
+
+        <form class="form w-25 mx-auto" th:action="@{/categories/edit/{id}(id=${category.id})}"  th:method="post">
+            <input type="hidden" name="_csrf" value="c95ccb2b-1afa-47bd-bf7b-a5b72739470b">
+            <div class="form-group">
+                <label for="name-edit" class="font-weight-bold">Name category</label>
+                <input name="name" th:value="${category.name}" type="text" class="form-control text-center " id="name-edit" placeholder="Username...">
+            </div>
+
+            <div class="button-holder d-flex justify-content-center">
+                <button type="submit" class="btn btn-info">Edit Category</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+</div>
+</body>
+</html>
+
