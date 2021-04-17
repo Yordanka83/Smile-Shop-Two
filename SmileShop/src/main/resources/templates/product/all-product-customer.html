@@ -1,0 +1,58 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body style="background-color: #bdefef;">
+<header>
+    <th:block th:include="~{fragments/nav}"></th:block>
+</header>
+
+<main class="mt-3">
+    <h1 class="text-center text-info">Products</h1>
+    <h2> </h2>
+
+    <table class="table table-success table-striped w-75 mx-auto">
+        <thead>
+        <tr class="row mx-auto">
+            <th class="col-md-1 text-info">Id</th>
+            <th class="col-md-3 text-info">Name Product</th>
+            <th class="col-md-2 text-info">Price</th>
+            <th class="col-md-3 text-info">Image</th>
+            <th class="col-md-3 text-info">Operations</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <th:block th:each="product, iter : ${products}">
+            <tr class="row mx-auto">
+                <th class="col-md-1 text-info" th:text="${iter.index + 1}"></th>
+                <td class="col-md-3 text-info" th:text="${product.name}"></td>
+                <td class="col-md-2 text-info" th:text="${product.price}"></td>
+                <td class="col-md-3 text-info">
+                    <div class="text-info">
+                        <img th:src="${product.imageUrl}" width="40" height="40" alt="Product">
+                    </div>
+                </td>
+
+                <td class="col-md-3 text-info">
+                    <a th:href="@{/products/details/{id}(id=${product.id})}" class="btn badge-info">View Product</a>
+                </td>
+<!--                <td class="col-md-3 text-info">-->
+<!--                    <a th:href="@{/products/details/{id}(id=${product.id})}" class="btn badge-info">Buy</a>-->
+<!--                </td>-->
+            </tr>
+        </th:block>
+
+        </tbody>
+    </table>
+
+</main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+
+</body></html>
