@@ -1,0 +1,43 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body style="background-color: #bdefef;">
+<header>
+    <th:block th:include="~{fragments/nav}"></th:block>
+</header>
+<main class="mt-3"  >
+    <div class="jumbotron bg-light text-center" style="background-color: #bdefef;" >
+        <div class="text-center">
+            <img th:src="${product.imageUrl}" width="250" height="250" alt="Product">
+        </div>
+        <div class="row">
+            <div class="col col-md-12 text-center mt-5">
+                <h3 th:text="'Name: ' + ${product.name}"></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12 text-center mt-3">
+                <h4 th:text="'Description: ' + ${product.description}"></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12 text-center">
+                <h4 th:text="'Price: ' + ${product.price}"></h4>
+            </div>
+        </div>
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn badge-info">Buy</button>
+        </div>
+    </div>
+    </main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+
+</body>
+</html>
