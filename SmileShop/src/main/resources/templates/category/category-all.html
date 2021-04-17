@@ -1,0 +1,49 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body style="background-color: #bdefef;">
+    <header>
+        <th:block th:include="~{fragments/nav}"></th:block>
+    </header>
+
+    <main class="mt-3">
+        <h1 class="text-center text-info">Categories</h1>
+        <h2> </h2>
+
+        <table class="table table-success table-striped w-75 mx-auto">
+            <thead>
+            <tr class="row mx-auto">
+                <th class="col-md-2 text-center text-info">Id</th>
+                <th class="col-md-5 text-center text-info">Name Category</th>
+                <th class="col-md-5 text-center text-info">Operations</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <th:block th:each="category, iter : ${categories}">
+                <tr class="row mx-auto">
+                    <th class="col-md-2 text-center text-info" th:text="${iter.index + 1}"></th>
+                    <td class="col-md-5 text-info" th:text="${category.name}"></td>
+                    <td class="col-md-5 text-center text-info">
+
+                        <a th:href="@{/categories/add}" class="btn badge-info">Add</a>
+                        <a th:href="@{/categories/edit/{id}(id=${category.id})}" class="btn badge-info">Edit</a>
+                        <a th:href="@{/categories/delete/{id}(id=${category.id})}" class="btn badge-info">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+
+</body></html>
