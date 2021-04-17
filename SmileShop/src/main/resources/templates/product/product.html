@@ -1,0 +1,76 @@
+
+<!--<html lang="en"-->
+<!--      xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/html">-->
+
+<!--<head>-->
+<!--    <th:block th:include="~{fragments/head}"></th:block>-->
+<!--</head>-->
+<!--<body style="background-color: #bdefef;">-->
+<!--<header>-->
+<!--    <th:block th:include="~{fragments/nav}"></th:block>-->
+<!--</header>-->
+
+
+<!--<h2 class="text-center text-white m-3">All Brands</h2>-->
+<!--<div class='row mb-4 d-flex justify-content-around'>-->
+<!--    <div-->
+<!--            th:each="category: ${categories}"-->
+<!--            class="brand-section col-md-5 mr-auto d-flex flex-column">-->
+<!--        <h2>Brand:-->
+<!--            <span th:text="${category.name}">Brand name</span>-->
+<!--        </h2>-->
+<!--        <div>Models:-->
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <th>No</th>-->
+<!--                    <th>Name</th>-->
+<!--                    <th>Category</th>-->
+<!--                    <th>Start Year</th>-->
+<!--                    <th>End Year</th>-->
+<!--                    <th>Picture</th>-->
+<!--                </tr>-->
+<!--                <tr-->
+<!--                        th:each="model, iter: ${brand.models}"-->
+<!--                        th:object="${model}">-->
+<!--                    <th th:text="${iter.index} + 1">No</th>-->
+<!--                    <th th:text="*{name}">Model Name</th>-->
+<!--                    <th th:text="*{category}">Model Category</th>-->
+<!--                    <th th:text="*{startYear}">Model Start Year</th>-->
+<!--                    <th th:text="*{endYear}?:'-'">Model End Year</th>-->
+<!--                    <th><img alt="image" th:src="*{imageUrl}"-->
+<!--                             class="img-thumbnail rounded"></th>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<!--<footer>-->
+<!--    <th:block th:include="~{fragments/footer}"></th:block>-->
+<!--</footer>-->
+
+
+<!--</body>-->
+<!--</html>-->
+<!--<script th:inline="javascript">-->
+<!--    function formatProduct(product) {-->
+<!--        return '<div class="product">'-->
+<!--            + '<div class="text-center">'-->
+<!--            + `<a href="/products/details/${product.id}">-->
+<!--<img src="${product.imageUrl}" class="product-image-home img-thumbnail px-auto" alt="Image not loaded..."/></a>`-->
+<!--            + '</div>'-->
+<!--            + `<h5 class="text-center font-weight-bold mt-3">Name: ${product.name}</h5>`-->
+<!--            + `<h5 class="text-center font-weight-bold">Price: ${product.price.toFixed(2)}</h5>`-->
+<!--            + '</div>'-->
+<!--    }-->
+
+<!--    function createCategoryElement(categoryName) {-->
+<!--        return ` <div class="custom-control custom-radio mt-3">-->
+<!--                    <input type="radio" id="${categoryName.toLowerCase()}Radio" name="selection" class="custom-control-input" value="${categoryName}">-->
+<!--                    <label class="h4 custom-control-label" for="${categoryName.toLowerCase()}Radio">${categoryName}</label>-->
+<!--                </div>`-->
+<!--    }-->
+<!--</script>-->
